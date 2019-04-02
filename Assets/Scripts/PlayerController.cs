@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,17 @@ public class PlayerController : MonoBehaviour
 
     // Private Variables
     private Rigidbody2D rBody;
+
+    public Text LivesUIText;
+    const int MaxLives=3;
+    int lives;
+    public void Init()
+    {
+        lives= MaxLives;
+        LivesUIText.text= lives.ToString();
+        transform.position = new Vector2 (0,0);
+        gameObject.SetActive (true);
+            }
      
     // Start is called before the first frame update
     // Use this for initialization
