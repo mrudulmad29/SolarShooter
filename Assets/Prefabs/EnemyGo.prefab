@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 6043653430761290675}
   - component: {fileID: 6043653430761290674}
   - component: {fileID: 6043653430761290672}
+  - component: {fileID: 4693128753732606040}
   m_Layer: 0
   m_Name: EnemyGo
   m_TagString: Untagged
@@ -138,3 +139,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5c43f72ea1bc74eb0eb3fc68a7b58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4693128753732606040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6043653430761290669}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73040db160df20d4fb7a10898489b9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tumble: 0
