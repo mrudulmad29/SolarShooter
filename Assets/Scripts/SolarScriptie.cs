@@ -48,11 +48,11 @@ public class SolarScriptie : MonoBehaviour
     void LateUpdate()
     {
         Vector3 localScale = transform.localScale;
-        if(Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.position += transform.up * Time.deltaTime * speed;
         }
-        if(Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.position -= transform.up * Time.deltaTime * speed;
         }
@@ -61,7 +61,8 @@ public class SolarScriptie : MonoBehaviour
             facingRight = true;
 
         }
-        else if (velX < 0) {
+        else if (velX < 0)
+        {
             facingRight = false;
 
         }
@@ -72,16 +73,15 @@ public class SolarScriptie : MonoBehaviour
 
         transform.localScale = localScale;
 
+
         Vector3 viewPos = transform.position;
         viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);
-        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
-       // viewPos.z = Mathf.Clamp(viewPos.z, screenBounds.z * -1 + objectHeight, screenBounds.z - objectHeight);
         transform.position = viewPos;
     }
 
-     void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if((other.tag=="enemy" )|| (other.tag=="EnemyBullet"))
+        if ((other.tag == "enemy") || (other.tag == "EnemyBullet"))
         {
             Destroy(gameObject);
         }

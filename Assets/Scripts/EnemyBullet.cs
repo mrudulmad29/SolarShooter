@@ -11,8 +11,14 @@ public class EnemyBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //StartCoroutine(LoadNextLevel(5.0f));
     }
+
+    // private IEnumerator LoadNextLevel(float waitTime)
+    // {
+    //     yield return new WaitForSeconds(waitTime);
+    //     Application.LoadLevel(0);
+    // }
 
     void Awake()
     {
@@ -47,8 +53,10 @@ public class EnemyBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag=="Player" )
+        if (other.tag == "Player")
         {
+
+            Application.LoadLevel(7);
             Destroy(gameObject);
         }
     }

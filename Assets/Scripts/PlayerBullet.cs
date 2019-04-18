@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-float speed;
+    float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +27,9 @@ float speed;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag=="enemy" )
+        if (other.tag == "enemy")
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreCount>().score += 1;
             Destroy(gameObject);
         }
     }

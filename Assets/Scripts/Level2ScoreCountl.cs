@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-
-public class ScoreCount : MonoBehaviour
+public class Level2ScoreCountl : MonoBehaviour
 {
     public int score = 0;
 
@@ -23,11 +21,6 @@ public class ScoreCount : MonoBehaviour
         scoreText.text = "Score:" + score.ToString();
 
         if (score >= 5)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-        }
-
-        // Application.LoadLevel(2);
+            Application.LoadLevel(2);
     }
 }

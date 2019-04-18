@@ -5,22 +5,16 @@ using UnityEngine;
 public class BackgroundScroll : MonoBehaviour
 {
     public float scrollSpeed=0.05f;
+    public GameObject endPosition;
+    private GameObject cam;
 
     void Start()
     {
-        InvokeRepeating("MoveBG",0.5f,0.5f);
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
-    void MoveBG()
+    void Update()
     {
-         GetComponent<Renderer>().material.mainTextureOffset = 
-       new Vector2(GetComponent<Renderer>().material.mainTextureOffset.x + scrollSpeed, 0.0f);
+        cam.transform.position = Vector3.Lerp(cam.transform.position, endPosition.transform.position, 0.0001f);
     }
-
-    // Update is called once per frame
-    // void Update()
-    // {   
-
-    //    GetComponent<Renderer>().material.mainTextureOffset= new Vector2(Time.time *scrollSpeed,0.0f);
-    // }
 }

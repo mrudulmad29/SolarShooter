@@ -4,31 +4,36 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-     public GameObject enemyObj;
+    public GameObject enemyObj;
     public Vector3 spawnValues;
     public int enemyObjCount;
     public float spawnWait;
     public float startWait;
     public float waveWait;
 
-    void Start ()
+    private int score;
+
+    void Start()
     {
-        StartCoroutine (SpawnWaves ());
+
+        score = 0;
+
+        StartCoroutine(SpawnWaves());
     }
 
-    IEnumerator SpawnWaves ()
+    IEnumerator SpawnWaves()
     {
-        yield return new WaitForSeconds (startWait);
+        yield return new WaitForSeconds(startWait);
         while (true)
         {
             for (int i = 0; i < enemyObjCount; i++)
             {
-                Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
-                Instantiate (enemyObj, spawnPosition, spawnRotation);
-                yield return new WaitForSeconds (spawnWait);
+                Instantiate(enemyObj, spawnPosition, spawnRotation);
+                yield return new WaitForSeconds(spawnWait);
             }
-            yield return new WaitForSeconds (waveWait);
+            yield return new WaitForSeconds(waveWait);
         }
     }
 }
